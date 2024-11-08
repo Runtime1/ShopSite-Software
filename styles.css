@@ -1,0 +1,1044 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --background-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --card-background: #16213e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    padding-top: 80px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://source.unsplash.com/random/1920x1080/?night,code') no-repeat center center/cover;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.features, .pricing, .contact {
+    padding: 5rem 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.feature-grid, .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item, .pricing-item {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover, .pricing-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item h3, .pricing-item h3 {
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.pricing-item ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-item li {
+    margin-bottom: 0.5rem;
+}
+
+.buy-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.contact button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--card-background);
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Hover effects for feature and pricing cards */
+.feature-item, .pricing-item {
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover, .pricing-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+/* Mobile-friendly navigation menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--card-background);
+        padding: 20px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Glow effect for CTA button */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+}
+
+.cta-button.glow {
+    animation: glow 1.5s infinite;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Update the existing .hero class */
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a semi-transparent overlay to improve text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 46, 0.7);
+    z-index: -1;
+}
+
+/* Add these styles to the end of the existing CSS file */
+
+.detailed-features {
+    padding: 5rem 10%;
+}
+
+.detailed-features h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-list .feature-item {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-list .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+.feature-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        margin: 0 0.5rem;
+    }
+}
+
+/* Add these styles to fix the footer */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Add a cool hover effect for feature items */
+.feature-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item:hover::after {
+    opacity: 0.1;
+}
+
+/* Add a pulsating effect for the CTA button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(108, 92, 231, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+    }
+}
+
+.cta-button {
+    animation: pulse 2s infinite;
+}
+
+/* Add a cool background effect for the pricing section */
+.pricing {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 50%);
+    opacity: 0.1;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add a floating animation for the feature icons */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Styles for the interactive feature demo */
+.feature-demo {
+    padding: 5rem 10%;
+    background-color: var(--card-background);
+}
+
+.demo-container {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.2);
+}
+
+.demo-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--card-background);
+    padding: 1rem;
+}
+
+.demo-nav-item {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.demo-nav-item:hover,
+.demo-nav-item.active {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.demo-content {
+    padding: 2rem;
+}
+
+.demo-item {
+    display: none;
+}
+
+.demo-item.active {
+    display: block;
+}
+
+.demo-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .demo-nav {
+        flex-wrap: wrap;
+    }
+
+    .demo-nav-item {
+        flex: 1 0 33.33%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Add some spacing between sections */
+section {
+    margin-bottom: 4rem;
+}
+
+/* Improve readability of feature items */
+.feature-item {
+    background-color: rgba(22, 33, 62, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* Add a subtle hover effect to buttons */
+.cta-button:hover,
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(108, 92, 231, 0.2);
+}
+
+/* Add these styles to enhance the feature list */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: rgba(22, 33, 62, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feature-item li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-item li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Add styles for the FAQ section */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background-color: rgba(22, 33, 62, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Add a pulsating effect for the buy button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(108, 92, 231, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+    }
+}
+
+.buy-button {
+    animation: pulse 2s infinite;
+}
+
+/* Add a floating animation for the feature icons */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.feature-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Improve readability */
+body {
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Add some spacing between sections */
+section {
+    margin-bottom: 4rem;
+}
+
+/* Styles for the testimonials section */
+.testimonials {
+    background-color: rgba(22, 33, 62, 0.8);
+    padding: 4rem 10%;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-item {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Update pricing grid for three items */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-item .buy-button {
+    margin-top: auto;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .pricing-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add some hover effects to pricing items */
+.pricing-item {
+    transition: all 0.3s ease;
+}
+
+.pricing-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+}
+
+.pricing-item.featured {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-item.featured::before {
+    content: 'Best Value';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transform: rotate(45deg) translate(25%, -50%);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Styles for the call-to-action section */
+.cta {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    padding: 4rem 10%;
+    margin-top: 4rem;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta .cta-button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.cta .cta-button:hover {
+    background-color: var(--background-color);
+    color: #fff;
+}
+
+/* Improve overall spacing and readability */
+section {
+    padding: 6rem 10%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Enhance the hero section */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(108, 92, 231, 0.7), rgba(162, 155, 254, 0.7));
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Add some animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-item, .pricing-item, .testimonial-item, .faq-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Improve footer styling */
+footer {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 2rem 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 1rem;
+    }
+}
+
+/* Scroll-to-top button styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Update hero text color */
+.hero h1, .hero p {
+    color: var(--text-color);
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for documentation and dev tips page */
+.documentation, .dev-tips {
+    padding: 4rem 10%;
+}
+
+.documentation h1, .dev-tips h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.doc-content, .tips-content {
+    background-color: rgba(22, 33, 62, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.doc-content h2, .tips-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.doc-content h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.doc-content p, .tips-content p {
+    margin-bottom: 1rem;
+}
+
+.doc-content pre {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.doc-content code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #d4d4d4;
+}
+
+.tip {
+    margin-bottom: 2rem;
+}
+
+.tip ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+.tip li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive design for documentation and dev tips */
+@media (max-width: 768px) {
+    .documentation, .dev-tips {
+        padding: 2rem 5%;
+    }
+
+    .doc-content, .tips-content {
+        padding: 1rem;
+    }
+
+    .doc-content h2, .tips-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .doc-content h3 {
+        font-size: 1.2rem;
+    }
+}
